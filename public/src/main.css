@@ -22,6 +22,7 @@ body {
 .header {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin: 0;
   height: 60px;
   background-color: #212529;
@@ -51,6 +52,17 @@ body {
   height: 0.25em;
   border-radius: 2px;
 }
+.header .search {
+  margin-left: 60vh;
+}
+.header .search input {
+  border: none;
+  padding: 0.5em;
+  line-height: 1.5rem;
+}
+.header .search [type=text] {
+  width: 15em;
+}
 
 .main {
   display: flex;
@@ -59,9 +71,28 @@ body {
   width: 100%;
   padding: 2.5rem;
 }
+.main .userroles {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main .userroles .team {
+  display: block;
+  padding: 0.3em;
+  background-color: #8f00ff;
+  color: white;
+  margin-left: 0.5em;
+}
+.main .userroles .role {
+  display: block;
+  padding: 0.3em;
+  background-color: #ff9900;
+  color: white;
+  margin-left: 0.5em;
+}
 .main .title {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   margin-bottom: 1em;
 }
@@ -73,8 +104,11 @@ body {
   display: flex;
   width: 100%;
   overflow: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 .main [class$=space] {
+  min-width: 15em;
   width: 50%;
   padding: 0;
   height: 60vh;
@@ -88,7 +122,7 @@ body {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   background-color: white;
   margin: 0;
-  height: 7em;
+  min-height: 7em;
   display: flex;
   padding: 0.5em;
   justify-content: space-between;
@@ -105,11 +139,27 @@ body {
   text-decoration: none;
   width: 100%;
   margin-bottom: 0.5em;
+  font-size: 1.8rem;
 }
 .logitem .item-wrapper p {
   width: 5em;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.logitem .item-wrapper p span:nth-of-type(1) {
+  width: 100%;
+  margin-bottom: 0.25em;
+}
+.logitem .item-wrapper p span:nth-of-type(2) {
+  background-color: #007bff;
+  padding: 0.25em;
+  border-radius: 5px;
+  color: white;
+  min-width: 95%;
+  margin-bottom: 0.25em;
 }
 .logitem i {
   width: auto;
@@ -122,29 +172,33 @@ body {
 .rightspace {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
 }
 .rightspace .shortcut {
-  width: 100%;
+  width: 50%;
+  padding: 0.5em;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
 }
 .rightspace .shortcut a {
   margin-bottom: 0.5em;
   width: 100%;
   font-size: 1.2em;
-  spacing: 1em;
   height: 3.5rem;
   text-align: left;
   padding-left: 0.5em;
   border: none;
   color: white;
+  border-radius: 5px;
 }
-.rightspace .shortcut .green {
+.rightspace .shortcut .positive {
   background-color: #28a745;
+}
+.rightspace .shortcut .neutral {
+  background-color: #007bff;
+}
+.rightspace .shortcut .important {
+  background-color: #ffc107;
 }
 .rightspace .shortcut button:active {
   color: black;

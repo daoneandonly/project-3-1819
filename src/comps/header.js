@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className="header">
       <div className="hamburger">
-        <a href="#">
+        <a href="http://cmd.jiskefet.io/?orderBy=creationTime&orderDirection=DESC&pageSize=16&pageNumber=1">
           <div className="burger-piece" />
           <div className="burger-piece" />
           <div className="burger-piece" />

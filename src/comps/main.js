@@ -2,16 +2,21 @@ import React from "react";
 import Leftspace from "./left-space";
 import Rightspace from "./right-space";
 
-function Main() {
+function Main(data) {
   return (
     <div className="main">
       <div className="title">
         <h1>Dashboard</h1>
-        <h2>Firstname Lastname</h2>
-        <div className="userroles" />
+        <h2>
+          {data.user.firstName} {data.user.lastName}
+        </h2>
+        <div className="userroles">
+          <p className="team">{data.user.team}</p>
+          <p className="role">{data.user.role}</p>
+        </div>
       </div>
       <div className="dashboard">
-        <Leftspace />
+        <Leftspace data={data.data} />
         <Rightspace />
       </div>
     </div>

@@ -1,9 +1,10 @@
 .header {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin: 0;
   height: 60px;
-  background-color: #212529;
+  background-color: $dark;
   align-items: center;
 
   * {
@@ -30,6 +31,17 @@
       width: 1.3em;
       height: 0.25em;
       border-radius: 2px;
+    }
+  }
+  .search {
+    margin-left: 60vh;
+    input {
+      border: none;
+      padding: 0.5em;
+      line-height: 1.5rem;
+    }
+    [type="text"] {
+      width: 15em;
     }
   }
 }

@@ -1,10 +1,10 @@
 import React from "react";
 
-function Shortcut() {
+function Shortcut(data) {
   return (
     <div className="shortcut">
-      <a className="green" href="http://cmd.jiskefet.io/logs/create">
-        Create New Log
+      <a className={data.color} href={data.link}>
+        {data.text}
       </a>
     </div>
   );

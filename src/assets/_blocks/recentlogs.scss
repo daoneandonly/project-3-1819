@@ -3,7 +3,7 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   background-color: white;
   margin: 0;
-  height: 7em;
+  min-height: 7em;
   display: flex;
   padding: 0.5em;
   justify-content: space-between;
@@ -21,12 +21,28 @@
       text-decoration: none;
       width: 100%;
       margin-bottom: 0.5em;
+      font-size: 1.8rem;
     }
 
     p {
       width: 5em;
-      display: block;
+      display: flex;
+      flex-wrap: wrap;
       text-align: center;
+      align-items: center;
+      justify-content: center;
+      span:nth-of-type(1) {
+        width: 100%;
+        margin-bottom: 0.25em;
+      }
+      span:nth-of-type(2) {
+        background-color: $neutral;
+        padding: 0.25em;
+        border-radius: 5px;
+        color: white;
+        min-width: 95%;
+        margin-bottom: 0.25em;
+      }
     }
   }
   i {
