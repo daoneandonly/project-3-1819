@@ -1,0 +1,39 @@
+.logitem {
+  width: 100%;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  margin: 0;
+  height: 7em;
+  display: flex;
+  padding: 0.5em;
+  justify-content: space-between;
+
+  .item-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    * {
+      color: black;
+    }
+
+    h3 {
+      display: block;
+      text-decoration: none;
+      width: 100%;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      width: 5em;
+      display: block;
+      text-align: center;
+    }
+  }
+  i {
+    width: auto;
+    font-size: 3em;
+    font-family: sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    padding-right: 0.5em;
+  }
+}
