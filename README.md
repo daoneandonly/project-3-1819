@@ -2,12 +2,19 @@
 
 A tool for discussing meta data on ALICE.
 
+I have been tasked through an assignment for CMD Amsterdam to improve upon work of fellow students from HvA ICT Amsterdam. This site can be found at http://cmd.jiskefet.io (credentials might be required).
+
 ## Table of contents
 
 - [Dashboard](#dashboard)
   - [Filterset](#Filterset)
   - [Recentlogs](#Recentlogs)
   - [Personal workspace](#Personal workspace)
+- [Prototype](#prototype)
+  - [Install](#install)
+  - [Examples](#examples)
+    - [Recent Logs](#Recent logs)
+    - [Quick Shortcuts](#Quick shortcuts)
 
 ## Dashboard
 
@@ -50,3 +57,88 @@ This design assumes there is a need to go back to older logs. If that wouldn't b
 Certain sections of Jiskefet will be more frequently used by certain staff members than others. With this dashboard, using different user roles to create workspace that is catered to specific use cases of a staff member.
 
 Different teams can be made for groups of people that should have the same kind of privileges. Individual tags or roles could be established to grant access or differentiate users within a team. ie A team could be "Detector 1", where as a role would be "Team leader".
+
+## Prototype
+
+To demonstrate the solution, I have made a prototype of the dashboard. It shows where in the app it is located and how it could contribute to a more user-friendly entry level.
+
+The prototype has been made with [React](https://reactjs.org/), as per request of the client. To kickstart this prototype I've used `npx create-react-app`, which explains some the workspace on this project. Besides, I've used [Sass](https://sass-lang.com/) for additional styling, as bootstrap was very limited for a prototype in such a short time.
+
+To give the prototype more meaning than just a proof of concept, I tried sticking with the [Atomic design](http://bradfrost.com/blog/post/atomic-web-design/) principles. The prototype is made up of reusable components which should be easy to transfer to the development version.
+
+### Install
+
+Download this repository by running the following commands
+
+```bash
+git clone https://www.github.com/daoneandonly/project-3-1819/
+npm install
+```
+
+Then run the script
+
+```bash
+npm start
+```
+
+### Examples
+
+The app consists of `main.js` component which holds everything except the top navigation bar.
+
+`main.js` requires a first and last name, and a possible list of teams or roles. This makes the dashboard feel specifically catered to that user.
+
+```js
+<div className="title">
+  <h1>Dashboard</h1>
+  <h2>
+    {data.user.firstName} {data.user.lastName}
+  </h2>
+  <div className="userroles">
+    <p className="team">{data.user.team}</p>
+    <p className="role">{data.user.role}</p>
+  </div>
+```
+
+`main.js` holds two components: `left-space.js` and `right-space.js`. These represent the two boxes in the app.
+
+#### Recent logs
+
+In `left-space.js` the component `logitem.js` is located. This represents an individual log and can added multiple times.
+
+`Logitem` needs the `logdata` attribute which uses an object that holds the data about a specific log.
+
+```js
+<Logitem logdata={item} key={item.logid} />
+```
+
+A log entree will rendered as following:
+
+```js
+<h3>{data.logdata.title}</h3>
+<p>
+  <span>id</span> <span>{data.logdata.logid}</span>
+</p>
+<p>
+  <span>Subtype</span> <span>{data.logdata.subtype}</span>
+</p>
+<p>
+  <span>Source</span> <span>{data.logdata.origin}</span>
+</p>
+<p>
+  <span>Author</span> <span>{data.logdata.author}</span>
+</p>
+```
+
+#### Quick shortcuts
+
+`right-space.js` has `<Shortcut />` as components. These need a color (which is a class), a string of text and a link.
+
+Here is an example
+
+```js
+<Shortcut
+  color="positive"
+  text="Create new Log"
+  link="http://cmd.jiskefet.io/logs/create"
+/>
+```
